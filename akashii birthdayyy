@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happiest Birthday Akashii</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffe4ec, #ffc6d0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      color: #d6006c;
+      border-left: 6px solid #c71585;
+      border-right: 6px solid #c71585;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    p {
+      font-size: 1.1em;
+      max-width: 600px;
+      margin: 10px 20px;
+      color: #8b0049;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .heart {
+      animation: pulse 1s infinite;
+      color: #ff69b4;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #ff66a3; }
+      50% { text-shadow: 0 0 20px #ff66a3; }
+      100% { text-shadow: 0 0 5px #ff66a3; }
+    }
+
+    /* Confetti animation */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: pink;
+      animation: fall 5s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Happiest Birthday Akashii 🫶🏻🩷</h1>
+  <p>
+    Wishing you a day full of joy, laughter, and beautiful memories. <br>
+    You deserve all the happiness in the world. <br>
+    Keep shining always, just like you do. <br>
+    <span class="heart">❤️</span>
+  </p>
+
+  <!-- Confetti elements -->
+  <script>
+    for (let i = 0; i < 40; i++) {
+      let confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.backgroundColor = ['#ff69b4', '#ffc0cb', '#f06292'][Math.floor(Math.random()*3)];
+      confetti.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      document.body.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>
